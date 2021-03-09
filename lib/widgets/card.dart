@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
 class AdminCard extends StatelessWidget {
+  final card;
+
+  AdminCard(this.card);
+
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -9,7 +14,23 @@ class AdminCard extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           gradient:
-              LinearGradient(colors: [Colors.blue, Colors.red, Colors.green])),
+              LinearGradient(colors: this.card['color'])),
+      child: Center(
+          child: RichText(
+        text: TextSpan(
+          children: [
+            WidgetSpan(
+              child: Icon(
+                IconData(this.card['icon'], fontFamily: 'MaterialIcons'),
+                size: 90,
+              ),
+            ),
+            TextSpan(
+                text: this.card['value'].toString(),
+                style: TextStyle(fontSize: 60)),
+          ],
+        ),
+      )),
     );
   }
 }
