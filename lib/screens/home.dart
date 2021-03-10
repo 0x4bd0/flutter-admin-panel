@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_admin_panel/widgets/card.dart';
+import 'package:flutter_admin_panel/widgets/lineChart.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -124,19 +125,26 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 );
               } else {
-                return Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
+                return Column(
                   children: [
-                      for (var item in cards)
-                      Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: AdminCard(item),
-                          ),
-                        ],
-                      )
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                          for (var item in cards)
+                          Row(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: AdminCard(item),
+                              ),
+                            ],
+                          )
+                      ],
+                    ),
+                    Row(
+                      children: [AdminLineChart()],
+                    )
                   ],
                 );
               }
