@@ -143,7 +143,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                     Row(
-                      children: [Flexible(child: LineChartSample1())],
+                      children: [AdminLineChart()],
                     )
                   ],
                 );
