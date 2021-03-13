@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_admin_panel/blocks/home/homeDesktop.dart';
 import 'package:flutter_admin_panel/blocks/home/homeMobile.dart';
 import 'package:flutter_admin_panel/blocks/home/homeTablet.dart';
+import 'package:flutter_admin_panel/widgets/drawer.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -60,23 +61,12 @@ var cards = [
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Flutter admin panel'),
-      ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(10),
-          child: SafeArea(child: Container(
-            child: ScreenTypeLayout(
+    return  ScreenTypeLayout(
                 mobile: HomeMobile(cards),
                 tablet: HomeTablet(cards),
                 desktop: HomeDesktop(cards),
          //       watch: Container(color: Colors.purple)
-              )
-          )),
-        ),
-      ),
-    );
+              );
+  
   }
 }
