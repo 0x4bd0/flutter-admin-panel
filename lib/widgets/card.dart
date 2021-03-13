@@ -9,8 +9,8 @@ class AdminCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 350,
-      height: 200,
+      width: 300,
+      height: 150,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           gradient:

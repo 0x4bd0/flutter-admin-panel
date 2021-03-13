@@ -9,18 +9,42 @@ class MobileDrawer extends StatelessWidget {
     shrinkWrap: true,
     children: <Widget>[
       DrawerHeader(
-        child: Text('Drawer Header'),
+        child: Text('Welcome Back, Admin',
+        style: TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.bold
+        ),),
         decoration: BoxDecoration(
           color: Colors.blue,
         ),
       ),
       ListTile(
-        title: Text('Item 1'),
+        leading: Icon(Icons.store),
+        title: Text('Stores'),
         onTap: () {
         },
       ),
       ListTile(
-        title: Text('Item 2'),
+        leading: Icon(Icons.people_sharp),
+        title: Text('Clients'),
+        onTap: () {
+        },
+      ),
+      ListTile(
+        leading: Icon(Icons.person),
+        title: Text('Sellers'),
+        onTap: () {
+        },
+      ),
+      ListTile(
+        leading: Icon(Icons.list_alt_sharp),
+        title: Text('Orders'),
+        onTap: () {
+        },
+      ),
+        ListTile(
+        leading: Icon(Icons.delivery_dining),
+        title: Text('Deliveries'),
         onTap: () {
         },
       ),

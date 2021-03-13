@@ -12,7 +12,7 @@ class HomeTablet extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Flutter admin panel'),
+        title: const Text('Flutter admin panel',style: TextStyle(color: Colors.black),),
       ),
       drawer:  MobileDrawer(),
       body: SingleChildScrollView(
