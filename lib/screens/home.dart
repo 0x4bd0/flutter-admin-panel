@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_admin_panel/blocks/home/homeDesktop.dart';
-import 'package:flutter_admin_panel/widgets/card.dart';
-import 'package:flutter_admin_panel/widgets/lineChart.dart';
+import 'package:flutter_admin_panel/blocks/home/homeMobile.dart';
+import 'package:flutter_admin_panel/blocks/home/homeTablet.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -69,10 +69,10 @@ class _HomeScreenState extends State<HomeScreen> {
           padding: const EdgeInsets.all(10),
           child: SafeArea(child: Container(
             child: ScreenTypeLayout(
-                mobile: Container(color:Colors.blue),
-                tablet: Container(color: Colors.yellow),
+                mobile: HomeMobile(cards),
+                tablet: HomeTablet(cards),
                 desktop: HomeDesktop(cards),
-                watch: Container(color: Colors.purple)
+         //       watch: Container(color: Colors.purple)
               )
           )),
         ),
