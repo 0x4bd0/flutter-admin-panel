@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_admin_panel/widgets/card.dart';
+import 'package:flutter_admin_panel/widgets/chartOne.dart';
+import 'package:flutter_admin_panel/widgets/chartTwo.dart';
 import 'package:flutter_admin_panel/widgets/drawer.dart';
 
 class HomeTablet extends StatelessWidget {
@@ -19,15 +21,29 @@ class HomeTablet extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(10),
           child: SafeArea(child: Container(
-              child :     Center(
-                  child: Wrap(
-                    direction: Axis.horizontal,
-                    spacing:  20,
-                    runSpacing: 20,
-                    alignment: WrapAlignment.center,
+              child :  Center(
+                  child: Column(
                     children: [
-                      for (var item in cards)       
-                            AdminCard(item),
+                      Wrap(
+                        direction: Axis.horizontal,
+                        spacing:  20,
+                        runSpacing: 20,
+                        alignment: WrapAlignment.center,
+                        children: [
+                          for (var item in cards)       
+                                AdminCard(item),
+                        ],
+                      ),
+                          SizedBox(height: 20),
+                            Card(child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(height:300, child: SimpleLineChart()),
+                            )),
+                           SizedBox(height: 20),
+                             Card(child: Padding(
+                               padding: const EdgeInsets.all(8.0),
+                               child: Container(height:300, child: GroupedBarChart()),
+                             )),
                     ],
                   ),
                 )
