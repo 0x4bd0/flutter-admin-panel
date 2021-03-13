@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class SimpleLineChart extends StatelessWidget {
   final List<charts.Series> seriesList = _createSampleData();
-  final bool animate = false;
+  final bool animate = true;
 
   // SimpleLineChart(this.seriesList, {this.animate});
 
