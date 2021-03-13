@@ -106,7 +106,7 @@ class HomeDesktop extends StatelessWidget {
                                             MediaQuery.of(context).size.height,
                                         child: Padding(
                                           padding: const EdgeInsets.all(8.0),
-                                          child: Expanded(child: MyDatatable()),
+                                          child: MyDatatable(),
                                         ),
                                       ))),
                                 ],

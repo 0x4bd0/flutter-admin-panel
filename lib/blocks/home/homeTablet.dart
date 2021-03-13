@@ -59,7 +59,16 @@ final card_params = {
                                     scrollDirection: Axis.vertical,
                                     child: SingleChildScrollView(
                                       scrollDirection: Axis.horizontal,
-                                      child: MyDatatable()))),
+                                      child: ConstrainedBox(
+                                    constraints: BoxConstraints(
+                                            maxWidth: MediaQuery.of(context).size.width),
+                                        child: Column(
+                                         crossAxisAlignment: CrossAxisAlignment.stretch,
+                                          children: [
+                                            MyDatatable(),
+                                          ],
+                                        ),
+                                      )))),
                              )),
                     ],
                   ),
