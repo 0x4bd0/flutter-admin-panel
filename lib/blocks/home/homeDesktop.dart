@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_admin_panel/widgets/card.dart';
 import 'package:flutter_admin_panel/widgets/chartOne.dart';
 import 'package:flutter_admin_panel/widgets/chartTwo.dart';
+import 'package:flutter_admin_panel/widgets/dattable.dart';
 import 'package:flutter_admin_panel/widgets/drawer.dart';
 
 class HomeDesktop extends StatelessWidget {
@@ -86,6 +87,26 @@ class HomeDesktop extends StatelessWidget {
                                         child: Padding(
                                           padding: const EdgeInsets.all(8.0),
                                           child: GroupedBarChart(),
+                                        ),
+                                      ))),
+                                ],
+                              ),
+                            )),
+                           Flexible(
+                                child: Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  Flexible(
+                                      flex: 1,
+                                      child: Card(
+                                          child: Container(
+                                        height:
+                                            MediaQuery.of(context).size.height,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Expanded(child: MyDatatable()),
                                         ),
                                       ))),
                                 ],

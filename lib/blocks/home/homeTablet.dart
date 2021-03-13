@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_admin_panel/widgets/card.dart';
 import 'package:flutter_admin_panel/widgets/chartOne.dart';
 import 'package:flutter_admin_panel/widgets/chartTwo.dart';
+import 'package:flutter_admin_panel/widgets/dattable.dart';
 import 'package:flutter_admin_panel/widgets/drawer.dart';
 
 class HomeTablet extends StatelessWidget {
@@ -49,6 +50,16 @@ final card_params = {
                              Card(child: Padding(
                                padding: const EdgeInsets.all(8.0),
                                child: Container(height:300, child: GroupedBarChart()),
+                             )),
+                            Card(child: Padding(
+                               padding: const EdgeInsets.all(8.0),
+                               child: Container(height:300, 
+                               width: MediaQuery.of(context).size.width,
+                               child: SingleChildScrollView(
+                                    scrollDirection: Axis.vertical,
+                                    child: SingleChildScrollView(
+                                      scrollDirection: Axis.horizontal,
+                                      child: MyDatatable()))),
                              )),
                     ],
                   ),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_admin_panel/widgets/card.dart';
 import 'package:flutter_admin_panel/widgets/chartOne.dart';
 import 'package:flutter_admin_panel/widgets/chartTwo.dart';
+import 'package:flutter_admin_panel/widgets/dattable.dart';
 import 'package:flutter_admin_panel/widgets/drawer.dart';
 
 class HomeMobile extends StatelessWidget {
@@ -51,6 +52,14 @@ class HomeMobile extends StatelessWidget {
                              Card(child: Padding(
                                padding: const EdgeInsets.all(8.0),
                                child: Container(height:300, child: GroupedBarChart()),
+                             )),
+                             Card(child: Padding(
+                               padding: const EdgeInsets.all(8.0),
+                               child: Container(height:300, child: SingleChildScrollView(
+                                    scrollDirection: Axis.vertical,
+                                    child: SingleChildScrollView(
+                                      scrollDirection: Axis.horizontal,
+                                      child: MyDatatable()))),
                              )),
                         ],
                       ),
