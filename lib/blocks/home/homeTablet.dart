@@ -9,8 +9,14 @@ class HomeTablet extends StatelessWidget {
   final cards;
   HomeTablet(this.cards);
 
+
   @override
   Widget build(BuildContext context) {
+
+final card_params = {
+    'height' : 150,
+    'width' : MediaQuery.of(context).size.width*0.45
+  };
 
     return Scaffold(
       appBar: AppBar(
@@ -31,7 +37,7 @@ class HomeTablet extends StatelessWidget {
                         alignment: WrapAlignment.center,
                         children: [
                           for (var item in cards)       
-                                AdminCard(item),
+                                AdminCard(card:item,  params : card_params),
                         ],
                       ),
                           SizedBox(height: 20),

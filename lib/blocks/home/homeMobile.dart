@@ -9,8 +9,14 @@ class HomeMobile extends StatelessWidget {
   final cards;
   HomeMobile(this.cards);
 
+
   @override
   Widget build(BuildContext context) {
+
+  final card_params = {
+    'height' : 150,
+    'width' : MediaQuery.of(context).size.width
+  };
 
     return Scaffold(
       appBar: AppBar(
@@ -33,7 +39,7 @@ class HomeMobile extends StatelessWidget {
                             alignment: WrapAlignment.center,
                             children: [
                               for (var item in cards)       
-                                    AdminCard(item),
+                                    AdminCard(card:item, params:card_params),
                             ],
                           ),
                           SizedBox(height: 20),

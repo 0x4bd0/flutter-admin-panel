@@ -2,19 +2,18 @@ import 'package:flutter/material.dart';
 
 class AdminCard extends StatelessWidget {
   final card;
+  final params;
 
-  AdminCard(this.card);
-
+  AdminCard({this.card, this.params});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 300,
-      height: 150,
+      width: this.params['width'],
+      height: this.params['height'],
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          gradient:
-              LinearGradient(colors: this.card['color'])),
+          gradient: LinearGradient(colors: this.card['color'])),
       child: Center(
           child: RichText(
         text: TextSpan(
