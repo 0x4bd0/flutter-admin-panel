@@ -6,6 +6,7 @@ class MobileDrawer extends StatelessWidget {
     return Drawer(
   child: ListView(
     padding: EdgeInsets.zero,
+    shrinkWrap: true,
     children: <Widget>[
       DrawerHeader(
         child: Text('Drawer Header'),
