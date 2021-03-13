@@ -23,7 +23,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  fl_chart: ^0.20.1
+  fl_chart: ^0.10.0
+  charts_flutter: ^0.10.0
   responsive_builder: ^0.3.0
 
 

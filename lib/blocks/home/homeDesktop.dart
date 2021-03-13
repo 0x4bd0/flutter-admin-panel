@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_admin_panel/widgets/card.dart';
+import 'package:flutter_admin_panel/widgets/chartOne.dart';
 import 'package:flutter_admin_panel/widgets/drawer.dart';
 
 class HomeDesktop extends StatelessWidget {
@@ -26,14 +27,33 @@ class HomeDesktop extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
                   child: SizedBox.expand(
-                    child: Wrap(
-                      direction: Axis.horizontal,
-                      alignment: WrapAlignment.center,
-                      spacing:  20,
-                      runSpacing: 20,
+                    child: Column(
                       children: [
-                        for (var item in cards)       
-                              AdminCard(item),
+                        Wrap(
+                          direction: Axis.horizontal,
+                          alignment: WrapAlignment.center,
+                          spacing:  20,
+                          runSpacing: 20,
+                          children: [
+                            for (var item in cards)       
+                                  AdminCard(item),
+                          ],
+                        ),
+                       Flexible(child: Padding(
+                         padding: const EdgeInsets.all(10.0),
+                         child: Row(
+                           children: [
+                             Flexible(flex:1,child: Card(child: Padding(
+                               padding: const EdgeInsets.all(8.0),
+                               child: SimpleLineChart(),
+                             ))),
+                            Flexible(flex:1,child: Card(child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: SimpleLineChart(),
+                            ))),
+                           ],
+                         ),
+                       )),
                       ],
                     ),
                   ),
